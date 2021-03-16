@@ -53,7 +53,8 @@ namespace Matrix_Multiplication_Tests
             Matrix final = matrix1.Multiply(matrix2);
             final.Write_File("Outpit_Final_Matrix.txt");
             string expected = "1 0" +'\n' +"0 1";
-            string actual = File.ReadAllText(@"C:\Users\boris\OneDrive\Рабочий стол\Matrix_Using\" + "Outpit_Final_Matrix.txt");
+            string actual = File.ReadAllText(Directory.GetCurrentDirectory() + "\\Matrix_Using\\" + "Outpit_Final_Matrix.txt");
+            
             Assert.AreEqual(expected, actual);
         }
     }

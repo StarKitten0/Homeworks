@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Matrix_Multiplication
 {
@@ -6,6 +7,9 @@ namespace Matrix_Multiplication
     {
         static void Main(string[] args)
         {
+            string path = Directory.GetCurrentDirectory();
+            Console.WriteLine(path);
+            Console.ReadKey();
             Matrix matrix1 = new Matrix();
             Matrix matrix2 = new Matrix();
             matrix1.GetFileName("Input_First_Matrix.txt");

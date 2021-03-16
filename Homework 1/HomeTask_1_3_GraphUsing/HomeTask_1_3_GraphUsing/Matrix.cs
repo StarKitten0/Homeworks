@@ -9,7 +9,7 @@ namespace Matrix_Multiplication
   public  class Matrix
     {
         int[,] matrix;
-        int number_of_lines, number_of_columns;
+       public int number_of_lines, number_of_columns;
         string[] textfromfile;
         string file_name;
 
@@ -20,7 +20,9 @@ namespace Matrix_Multiplication
         public void ReadFile()
         {
             
-            var path = Directory.GetCurrentDirectory() + "\\Matrix_Using\\"+ file_name;
+            var path = Directory.GetCurrentDirectory() + "\\"+ file_name;
+            
+            
             if (!File.Exists(path))
             {
                 throw new File_Not_Exist_Exception();
@@ -94,7 +96,7 @@ namespace Matrix_Multiplication
 
         public void Write_File(string file_name)
         {
-            var path = Directory.GetCurrentDirectory() + "\\Matrix_Using\\" + file_name;
+            var path = Directory.GetCurrentDirectory() + "\\" + file_name;
             string text_to_file="";
             for (int i=0;i<number_of_lines;i++)
             {
@@ -111,7 +113,13 @@ namespace Matrix_Multiplication
             File.WriteAllText(path, text_to_file);
         }
 
-        
+       
+        public int Current_Value(int i,int j)
+        {
+            return matrix[i,j];
+        }
+
+
 
     }
 }
